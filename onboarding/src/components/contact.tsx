@@ -1,5 +1,12 @@
 import "../app.css";
 
+type ContactProps = {
+  name?: string;
+  email?: string;
+  slackName?: string;
+  competences?: string;
+};
+
 const Contact = () => {
   return (
     <div className="contact">

@@ -4,7 +4,7 @@ import Contact from "./contact";
 const Contacts = () => {
   return (
     <div className="contacts">
-      <h3>Testing contacts div </h3>
+      <h3>Who to Contact: </h3>
       <Contact />
       <Contact />
       <Contact />
