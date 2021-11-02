@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "../app.css";
+import "../../app.css";
 import StarsIcon from "@mui/icons-material/Stars";
 
 type ContactProps = {

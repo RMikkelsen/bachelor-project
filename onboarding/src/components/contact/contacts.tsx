@@ -1,4 +1,4 @@
-import "../app.css";
+import "../../app.css";
 import Contact from "./contact";
 
 const Contacts = () => {
