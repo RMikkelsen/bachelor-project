@@ -1,19 +1,20 @@
+import { FC } from "react";
 import "../app.css";
+import StarsIcon from "@mui/icons-material/Stars";
 
 type ContactProps = {
   name?: string;
   email?: string;
-  slackName?: string;
-  competences?: string;
+  slack?: string;
 };
 
-const Contact = () => {
+const Contact: FC<ContactProps> = ({ name, email, slack }) => {
   return (
     <div className="contact">
-      <p>Contact Name </p>
-      <p>Email@email.com </p>
-      <p> Slack Name </p>
-      <p>Competences </p>
+      <p>Contact: {name} </p>
+      <p>Email: {email}</p>
+      <p>Slack Name: {slack} </p>
+      <StarsIcon className="star" color="inherit" />
     </div>
   );
 };
