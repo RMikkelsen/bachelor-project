@@ -79,6 +79,28 @@ body {
   color: #f2e205;
 }
 
-.star {
+.starContact {
   color: #f229e5;
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+.starLink {
+  color: #f229e5;
+  margin-left: 300px;
+}
+.orange {
+  color: orange;
+  margin-right: 5px;
+}
+.deleteIcon {
+  margin-right: 10px;
+}
+
+.input {
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 5px;
+  padding: 10px;
 }

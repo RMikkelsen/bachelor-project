@@ -5,17 +5,17 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 type ListItemProps = {
   id?: number;
-  linkName?: string;
+  linkUrl?: string;
 };
 
-const LinkListItem: FC<ListItemProps> = ({ id, linkName }) => {
+const LinkListItem: FC<ListItemProps> = ({ id, linkUrl }) => {
   return (
     <div className="linkListItem">
       <p>
-        {id}) {linkName}
+        <HighlightOffIcon className="deleteIcon" color="error" />
+        {id}) {linkUrl}
       </p>
-      <StarsIcon className="star" color="inherit" />
-      <HighlightOffIcon color="error" />
+      <StarsIcon className="starLink" color="inherit" />
     </div>
   );
 };

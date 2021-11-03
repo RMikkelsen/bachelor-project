@@ -7,10 +7,10 @@ const LinkList = () => {
     <div className="linklist">
       <h3>Documentation / Links</h3> <br />
       <LinkInput />
-      <LinkListItem id={1} linkName={"Official React Documentation"} />
-      <LinkListItem id={2} linkName={"Official Typescript Documentation"} />
-      <LinkListItem id={3} linkName={"Article on State Managment"} />
-      <LinkListItem id={4} linkName={"Something else here important"} />
+      <LinkListItem id={1} linkUrl={"Official React Documentation"} />
+      <LinkListItem id={2} linkUrl={"Official Typescript Documentation"} />
+      <LinkListItem id={3} linkUrl={"Article on State Managment"} />
+      <LinkListItem id={4} linkUrl={"Something else here important"} />
     </div>
   );
 };

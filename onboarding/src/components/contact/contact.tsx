@@ -14,7 +14,7 @@ const Contact: FC<ContactProps> = ({ name, email, slack }) => {
       <p>Contact: {name} </p>
       <p>Email: {email}</p>
       <p>Slack Name: {slack} </p>
-      <StarsIcon className="star" color="inherit" />
+      <StarsIcon className="starContact" color="inherit" />
     </div>
   );
 };
