@@ -3,17 +3,18 @@ import "../../app.css";
 import StarsIcon from "@mui/icons-material/Stars";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
-type ListItemProps = {
+export type ListItem = {
   id?: number;
-  linkUrl?: string;
+  text?: string;
+  isFavorite?: boolean;
 };
 
-const LinkListItem: FC<ListItemProps> = ({ id, linkUrl }) => {
+const LinkListItem: FC<ListItem> = ({ id, text }) => {
   return (
     <div className="linkListItem">
       <p>
         <HighlightOffIcon className="deleteIcon" color="error" />
-        {id}) {linkUrl}
+        {id}) {text}
       </p>
       <StarsIcon className="starLink" color="inherit" />
     </div>
