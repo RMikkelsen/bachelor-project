@@ -4,7 +4,7 @@ import StarsIcon from "@mui/icons-material/Stars";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export type ListItem = {
-  id?: number;
+  id?: string;
   text?: string;
   isFavorite?: boolean;
 };

@@ -1,15 +1,17 @@
 import create from "zustand";
-// import { ListItem } from "./components/list/link-list-item";
+//import { ListItem } from "./components/list/link-list-item";
 import { v4 as uuidv4 } from "uuid";
 
-export interface IListItem {
+export type ListItem = {
   id?: string;
   text?: string;
   isFavorite?: boolean;
-}
+};
 
 export type LinkState = {
-  addLink: (title: string) => void;
+  links: Array<ListItem>;
+  addLink: (text: string) => void;
+  //resetInput: (text: string) => void;
   removeLink: (index: number) => void;
   toggleFavorite: (index: number) => void;
 };
@@ -17,10 +19,21 @@ export type LinkState = {
 const myuuid = uuidv4();
 
 const useStore = create<LinkState>((set) => ({
-  IListItem: [],
-  addLink: () => set((state) => ({})),
-  removeLink: () => set((state) => ({})),
-  toggleFavorite: () => set((state) => ({})),
+  links: [],
+  addLink: (text: string) =>
+    set((state) => ({ links: [...state.links, { text: text }] })),
+  //resetInput: () => set((state) => ({})),
+  removeLink: (index: number) =>
+    set((state) => ({ links: state.links.filter((link, id) => id !== index) })),
+  toggleFavorite: (index: number) =>
+    set((state) => ({
+      links: state.links.map((link, id) => {
+        if (index !== id) {
+          return link;
+        }
+        return { ...link, isFavorite: !link.isFavorite };
+      }),
+    })),
 }));
 
 export default useStore;
