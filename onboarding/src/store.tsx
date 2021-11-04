@@ -1,9 +1,7 @@
 import create from "zustand";
-//import { ListItem } from "./components/list/link-list-item";
-import { v4 as uuidv4 } from "uuid";
 
 export type ListItem = {
-  id?: string;
+  // id?: string;
   text?: string;
   isFavorite?: boolean;
 };
@@ -11,18 +9,15 @@ export type ListItem = {
 export type LinkState = {
   links: Array<ListItem>;
   addLink: (text: string) => void;
-  //resetInput: (text: string) => void;
+
   removeLink: (index: number) => void;
   toggleFavorite: (index: number) => void;
 };
-
-const myuuid = uuidv4();
 
 const useStore = create<LinkState>((set) => ({
   links: [],
   addLink: (text: string) =>
     set((state) => ({ links: [...state.links, { text: text }] })),
-  //resetInput: () => set((state) => ({})),
   removeLink: (index: number) =>
     set((state) => ({ links: state.links.filter((link, id) => id !== index) })),
   toggleFavorite: (index: number) =>

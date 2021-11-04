@@ -2,22 +2,39 @@ import { FC } from "react";
 import "../../app.css";
 import StarsIcon from "@mui/icons-material/Stars";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import useStore, { ListItem as ListItemType, LinkState } from "../../store";
 
-export type ListItem = {
-  id?: string;
-  text?: string;
-  isFavorite?: boolean;
-};
+// export type ListItem = {
+//   id?: string;
+//   text?: string;
+//   isFavorite?: boolean;
+// };
 
-const LinkListItem: FC<ListItem> = ({ id, text }) => {
+function LinkListItem({
+  text,
+  isFavorite,
+  index,
+}: ListItemType & { index: number }) {
+  const toggleStarred = useStore((state: LinkState) => state.toggleFavorite);
+  const remove = useStore((state: LinkState) => state.removeLink);
   return (
     <div className="linkListItem">
       <p>
-        <HighlightOffIcon className="deleteIcon" color="error" />
-        {id}) {text}
+        <HighlightOffIcon
+          className="deleteIcon"
+          color="error"
+          onClick={() => remove(index)}
+        />
+        {/* {id}) {text} */}
       </p>
-      <StarsIcon className="starLink" color="inherit" />
+      <StarsIcon
+        className="starLink"
+        color="inherit"
+        onChange={() => {
+          toggleStarred(index);
+        }}
+      />
     </div>
   );
-};
+}
 export default LinkListItem;
