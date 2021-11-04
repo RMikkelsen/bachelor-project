@@ -3,14 +3,10 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import useStore from "../../store";
 import React from "react";
 
-// type LinkInputProps = {
-//   onSubmit?: (text?: string) => void;
-// };
-
 const LinkInput = () => {
   const [text, setText] = React.useState<string>("");
   const add = useStore((state) => state.addLink);
-  console.log(LinkInput);
+  console.log(text);
   return (
     <>
       <label>

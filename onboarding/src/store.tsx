@@ -9,7 +9,6 @@ export type ListItem = {
 export type LinkState = {
   links: Array<ListItem>;
   addLink: (text: string) => void;
-
   removeLink: (index: number) => void;
   toggleFavorite: (index: number) => void;
 };
