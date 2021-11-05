@@ -1,7 +1,10 @@
 import "../../app.css";
 import StarsIcon from "@mui/icons-material/Stars";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import useStore, { ListItem as ListItemType, LinkState } from "../../store";
+import useStore, {
+  ListItem as ListItemType,
+  LinkState,
+} from "../../list-store";
 
 function LinkListItem({
   text,

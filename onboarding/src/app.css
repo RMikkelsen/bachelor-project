@@ -30,6 +30,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   gap: 30px;
+  height: 100%;
 }
 .contacts {
   background-color: rgba(22, 22, 41, 0.5);
@@ -64,6 +65,9 @@ body {
   padding: 10px;
 }
 
+.contact:hover {
+  transform: scale(1.02);
+}
 .linkListItem {
   text-align: left;
   margin-left: 50px;
@@ -75,6 +79,9 @@ body {
   padding: 10px;
 }
 
+.linkListItem:hover {
+  transform: scale(1.02);
+}
 .yellow {
   color: #f2e205;
   margin-bottom: -8px;
@@ -108,4 +115,22 @@ body {
   padding: 10px;
   background-color: rgba(130, 124, 212, 0.212);
   color: white;
+}
+
+.youtubeBlock {
+  background-color: rgba(130, 124, 212, 0.212);
+  width: 500px;
+  height: 150px;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+  text-align: left;
+  padding: 10px;
+}
+.youtubeBlock:hover {
+  transform: scale(1.02);
+}
+
+ul {
+  list-style: none;
 }

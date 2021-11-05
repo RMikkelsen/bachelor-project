@@ -1,7 +1,7 @@
 import create from "zustand";
+import { persist } from "zustand/middleware";
 
 export type ListItem = {
-  // id?: string;
   text?: string;
   isFavorite?: boolean;
 };
@@ -13,7 +13,7 @@ export type LinkState = {
   toggleFavorite: (index: number) => void;
 };
 
-const useStore = create<LinkState>((set) => ({
+export const useStore = create<LinkState>((set) => ({
   links: [],
   addLink: (text: string) =>
     set((state) => ({ links: [...state.links, { text: text }] })),
@@ -35,10 +35,7 @@ export default useStore;
 //need contact state
 //getContacts()
 //toggleStarred()
-//need list state
-//addLink()
-//toggleStarred()
-//removeLink()
+
 //need video state
 //addVideo()
 //removeVideo

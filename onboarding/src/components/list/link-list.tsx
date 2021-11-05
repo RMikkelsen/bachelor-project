@@ -1,5 +1,8 @@
 import "../../app.css";
-import useStore, { ListItem as ListItemType, LinkState } from "../../store";
+import useStore, {
+  ListItem as ListItemType,
+  LinkState,
+} from "../../list-store";
 import LinkInput from "./link-input";
 import LinkListItem from "./link-list-item";
 
