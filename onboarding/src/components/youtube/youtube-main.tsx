@@ -133,11 +133,10 @@ const YouTube: FC<YouTubeProps> = ({
                       {author}
                       By: <a href={author.ref}>{author.name}</a>
                     </li> */}
+
                     <li>title: {title}</li>
                     <li>Duration: {duration}</li>
-
                     <li>Views: {views}</li>
-
                     <li>description: {description}</li>
                   </ul>
                   <img src={thumbnail} alt="thumbnail" />

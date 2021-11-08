@@ -1,4 +1,6 @@
 import axios from "axios";
+import { useEffect } from "react";
+import useVideoStore from "../../youtube-store";
 
 export const API = {
   getData: () =>
@@ -13,21 +15,35 @@ export const API = {
     }),
 };
 
-// const options = {
-//     method: "GET",
-//     url: "https://youtube-search-results.p.rapidapi.com/youtube-search/",
-//     params: { q: "web+development" },
-//     headers: {
-//       "x-rapidapi-host": "youtube-search-results.p.rapidapi.com",
-//       "x-rapidapi-key": "5712da3fc3msh68ecf2ac4b9903ep1c5497jsn27fb0091085a",
-//     },
-//   };
+const YouTubeData = () => {
+  const videos = useVideoStore((state) => state.videos);
+  const addVideo = useVideoStore((state) => state.addVideo);
+  const removeVideo = useVideoStore((state) => state.removeVideo);
+  const toggleFavorite = useVideoStore((state) => state.toggleFavorite);
 
-//   axios
-//     .request(options)
-//     .then(function (response) {
-//       console.log(response.data);
-//     })
-//     .catch(function (error) {
-//       console.error(error);
-//     });
+  useEffect(() => {
+    const youtubeApi = async () => {
+      const videoData = await (
+        await fetch(
+          "https://youtube-search-results.p.rapidapi.com/youtube-search/"
+        )
+      ).json();
+      addVideo(videoData.results.map((pd: any) => pd.name));
+    };
+
+    youtubeApi();
+  }, []);
+
+  return (
+    <div>
+      <ul data-testId="video-list">
+        {videos.map((title: any) => (
+          <li key={title} data-testId={`video-${title}`}>
+            {title}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+export default YouTubeData;
