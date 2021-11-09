@@ -23,7 +23,7 @@ async function searchYouTube(q: string | number | boolean) {
 
 export type YouTubeProps = {
   id?: number;
-  link?: string;
+  url?: string;
   title?: string;
   description?: string;
   // author: {
@@ -32,23 +32,34 @@ export type YouTubeProps = {
   // };
   views?: boolean;
   duration?: boolean | number | string;
-  thumbnail?: string;
+  bestThumbnail?: string;
 };
+// type item = {
+//   id: React.Key | null | undefined;
+//   url: string | undefined;
+//   title:
+//     | boolean
+//     | React.ReactChild
+//     | React.ReactFragment
+//     | React.ReactPortal
+//     | null
+//     | undefined;
+// };
 
 const YouTube: FC<YouTubeProps> = ({
   id,
-  link,
+  url,
   title,
   description,
   // author,
   views,
   duration,
-  thumbnail,
+  bestThumbnail,
 }) => {
   const [query, setQuery] = React.useState<any>("Web Development");
-  const [list, setList] = React.useState<any[]>([""]);
+  const [list, setList] = React.useState<any>(null);
 
-  const search = (e: { preventDefault: () => void }) => {
+  const search = (e: any) => {
     e.preventDefault();
     searchYouTube(query).then(setList);
   };
@@ -77,7 +88,7 @@ const YouTube: FC<YouTubeProps> = ({
             {list.map(
               (item: {
                 id: React.Key | null | undefined;
-                link: string | undefined;
+                url: string | undefined;
                 title:
                   | boolean
                   | React.ReactChild
@@ -85,61 +96,23 @@ const YouTube: FC<YouTubeProps> = ({
                   | React.ReactPortal
                   | null
                   | undefined;
-                description:
-                  | boolean
-                  | React.ReactChild
-                  | React.ReactFragment
-                  | React.ReactPortal
-                  | null
-                  | undefined;
-                author: {
-                  ref: string | undefined;
-                  name:
-                    | boolean
-                    | React.ReactChild
-                    | React.ReactFragment
-                    | React.ReactPortal
-                    | null
-                    | undefined;
-                };
-                views:
-                  | boolean
-                  | React.ReactChild
-                  | React.ReactFragment
-                  | React.ReactPortal
-                  | null
-                  | undefined;
-                duration:
-                  | boolean
-                  | React.ReactChild
-                  | React.ReactFragment
-                  | React.ReactPortal
-                  | null
-                  | undefined;
-                uploaded_at:
-                  | boolean
-                  | React.ReactChild
-                  | React.ReactFragment
-                  | React.ReactPortal
-                  | null
-                  | undefined;
-                thumbnail: string | undefined;
               }) => (
-                <li className="youtubeBlock" key={id}>
-                  <a href={link}>{title}</a>
+                <li className="youtubeBlock" key={item.id}>
+                  <a href={item.url} rel="noopener noreferrer" target="_blank">
+                    {item.title}
+                  </a>
 
                   <ul>
-                    {/* <li>
-                      {author}
-                      By: <a href={author.ref}>{author.name}</a>
-                    </li> */}
+                    <li>
+                      {/* {author} */}
+                      {/* By: <a href={author.ref}>{author.name}</a> */}
+                    </li>
 
-                    <li>title: {title}</li>
                     <li>Duration: {duration}</li>
                     <li>Views: {views}</li>
                     <li>description: {description}</li>
                   </ul>
-                  <img src={thumbnail} alt="thumbnail" />
+                  <img src={bestThumbnail} alt="thumbnail" />
                   <StarsIcon className="starContact" color="inherit" />
                 </li>
               )

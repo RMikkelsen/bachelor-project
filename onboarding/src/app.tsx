@@ -12,9 +12,9 @@ function App() {
       <h1>Learning Portal</h1>
       <span className="blocks">
         <Contacts />
-        {/* <YouTube /> */}
-        <YouTubeSearch />
-        <YouTubeData />
+        <YouTube />
+        {/* <YouTubeSearch />
+        <YouTubeData /> */}
         <LinkList />
       </span>
     </div>

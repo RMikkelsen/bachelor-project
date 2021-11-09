@@ -134,3 +134,17 @@ body {
 ul {
   list-style: none;
 }
+
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: rgb(211, 211, 211);
+}
+
+/* mouse over link */
+a:hover {
+  color: #f2e205;
+}
