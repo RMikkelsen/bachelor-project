@@ -30,7 +30,7 @@ export type YouTubeProps = {
   //   ref?: string;
   //   name?: boolean;
   // };
-  views?: boolean;
+  views?: number;
   duration?: boolean | number | string;
   bestThumbnail?: string;
 };
@@ -56,8 +56,8 @@ const YouTube: FC<YouTubeProps> = ({
   duration,
   bestThumbnail,
 }) => {
-  const [query, setQuery] = React.useState<any>("Web Development");
-  const [list, setList] = React.useState<any>(null);
+  const [query, setQuery] = React.useState<string>("Web Development");
+  const [list, setList] = React.useState<string | any>("");
 
   const search = (e: any) => {
     e.preventDefault();
@@ -68,7 +68,7 @@ const YouTube: FC<YouTubeProps> = ({
     <div className="youtube">
       <h3>YouTube Video Tutorials</h3>
       <br />
-      <form onSubmit={search}>
+      <div onSubmit={search}>
         <input
           className="input"
           autoFocus
@@ -79,7 +79,7 @@ const YouTube: FC<YouTubeProps> = ({
           {" "}
           <AddCircleIcon className="yellow" color="inherit" />
         </button>
-      </form>
+      </div>
       {list &&
         (list.length === 0 ? (
           <p>No results</p>
