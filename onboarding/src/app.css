@@ -130,6 +130,10 @@ body {
 .youtubeBlock:hover {
   transform: scale(1.02);
 }
+button {
+  background-color: rgba(130, 124, 212, 0.212);
+  border: none;
+}
 
 ul {
   list-style: none;
@@ -147,4 +151,9 @@ a:visited {
 /* mouse over link */
 a:hover {
   color: #f2e205;
+}
+
+.thumbnail {
+  width: 150px;
+  height: auto;
 }

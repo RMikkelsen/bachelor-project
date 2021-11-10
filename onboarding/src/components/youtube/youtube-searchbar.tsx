@@ -1,10 +1,10 @@
 import "../../app.css";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import React from "react";
+import { useEffect, useState } from "react";
 import useVideoStore from "../../youtube-store";
 
 const YouTubeSearch = () => {
-  const [video, setVideo] = React.useState<string>("");
+  const [video, setVideo] = useState<string>("");
   const add = useVideoStore((state) => state.addVideo);
 
   return (
