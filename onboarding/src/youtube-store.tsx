@@ -5,12 +5,6 @@ export type Video = {
   video?: string;
   isFavorite?: boolean;
 };
-export type Data = {
-  method?: string;
-  url?: string;
-  params?: string;
-  headers?: string;
-};
 
 export type VideoState = {
   videos: Array<Video>;

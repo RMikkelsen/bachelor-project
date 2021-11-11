@@ -4,8 +4,9 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import "../../app.css";
 import searchYouTube from "../../services/youtube.service";
 import { useState } from "react";
+import YouTubeSearch from "./youtube-searchbar";
 
-interface IYoutubeItem {
+export interface IYoutubeItem {
   id: string;
   title: string;
   url: string;
@@ -22,7 +23,7 @@ interface IYoutubeItem {
 }
 
 const YouTube: FC = () => {
-  const [query, setQuery] = useState<string>("Web Development");
+  const [query, setQuery] = useState<string>("");
   const [youtubeResults, setYoutubeList] = useState<IYoutubeItem[]>([]);
 
   const search = (e: any) => {
@@ -34,6 +35,7 @@ const YouTube: FC = () => {
     <div className="youtube">
       <h3>YouTube Video Tutorials</h3>
       <br />
+
       <form onSubmit={search}>
         <input
           className="input"

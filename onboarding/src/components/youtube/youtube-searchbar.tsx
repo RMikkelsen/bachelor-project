@@ -2,36 +2,34 @@ import "../../app.css";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useEffect, useState } from "react";
 import useVideoStore from "../../youtube-store";
+import { IYoutubeItem } from "./youtube-main";
+import searchYouTube from "../../services/youtube.service";
 
 const YouTubeSearch = () => {
-  const [video, setVideo] = useState<string>("");
-  const add = useVideoStore((state) => state.addVideo);
+  //   const [query, setQuery] = useState<string>("Web Development");
+  // const [youtubeResults, setYoutubeList] = useState<IYoutubeItem[]>([]);
+
+  // const search = (e: any) => {
+  //   e.preventDefault();
+  //   searchYouTube(query).then(setYoutubeList);
+  // };
 
   return (
     <>
-      <div className="youtube">
-        <h3>Youtube Search Bar</h3>
-
-        <label>
-          <input
-            className="input"
-            placeholder="add your link / article"
-            value={video}
-            onChange={(e) => setVideo(e.target.value)}
-          />
-
-          <AddCircleIcon
-            className="yellow"
-            color="inherit"
-            onClick={() => {
-              if (video) {
-                add(video);
-                setVideo("");
-              }
-            }}
-          />
-        </label>
-      </div>
+      {/* <div>
+        <form onSubmit={search}> 
+      <input
+        className="input"
+        autoFocus
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <button type="submit">
+        {" "}
+        <AddCircleIcon className="yellow" color="inherit" />
+      </button>
+      {/* </form>
+      </div> */}
     </>
   );
 };
