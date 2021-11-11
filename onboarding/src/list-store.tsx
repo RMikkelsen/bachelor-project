@@ -13,30 +13,30 @@ export type LinkState = {
   toggleFavorite: (index: number) => void;
 };
 
-export const useStore = create<LinkState>((set) => ({
-  links: [],
-  addLink: (text: string) =>
-    set((state) => ({ links: [...state.links, { text: text }] })),
-  removeLink: (index: number) =>
-    set((state) => ({ links: state.links.filter((link, id) => id !== index) })),
-  toggleFavorite: (index: number) =>
-    set((state) => ({
-      links: state.links.map((link, id) => {
-        if (index !== id) {
-          return link;
-        }
-        return { ...link, isFavorite: !link.isFavorite };
-      }),
-    })),
-}));
+export let useListStore = create(
+  persist(
+    (set) => ({
+      links: [],
+      addLink: (text: string) =>
+        set((state: LinkState) => ({
+          links: [...state.links, { text: text }],
+        })),
+      removeLink: (index: number) =>
+        set((state: LinkState) => ({
+          links: state.links.filter((link, id) => id !== index),
+        })),
+      toggleFavorite: (index: number) =>
+        set((state: LinkState) => ({
+          links: state.links.map((link, id) => {
+            if (index !== id) {
+              return link;
+            }
+            return { ...link, isFavorite: !link.isFavorite };
+          }),
+        })),
+    }),
+    { name: "links" }
+  )
+);
 
-export default useStore;
-
-//need contact state
-//getContacts()
-//toggleStarred()
-
-//need video state
-//addVideo()
-//removeVideo
-//toggleStarred()
+export default useListStore;

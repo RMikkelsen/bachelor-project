@@ -97,6 +97,10 @@ body {
   color: #f229e5;
   margin-left: 300px;
 }
+
+.yellowYoutube {
+  color: #f2e205;
+}
 .orange {
   color: orange;
   margin-right: 5px;
@@ -156,4 +160,16 @@ a:hover {
 .thumbnail {
   width: 150px;
   height: auto;
+}
+
+.left {
+  margin-top: 10px;
+}
+.right {
+  margin-left: 300px;
+  margin-top: -75px;
+}
+
+img {
+  border-radius: 5px;
 }

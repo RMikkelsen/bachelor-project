@@ -23,7 +23,6 @@ interface IYoutubeItem {
 
 const YouTube: FC = () => {
   const [query, setQuery] = useState<string>("Web Development");
-  //const [list, setList] = useState<string | any>("");
   const [youtubeResults, setYoutubeList] = useState<IYoutubeItem[]>([]);
 
   const search = (e: any) => {
@@ -49,7 +48,11 @@ const YouTube: FC = () => {
       </form>
       {youtubeResults &&
         (youtubeResults.length === 0 ? (
-          <p>Search for Tutorials</p>
+          <>
+            {" "}
+            <br />
+            <p>Please enter a search parameter and save video to your list.</p>
+          </>
         ) : (
           <ul className="items">
             {youtubeResults.map((item) => (
@@ -58,7 +61,7 @@ const YouTube: FC = () => {
                   {item.title}
                 </a>
 
-                <ul>
+                <ul className="left">
                   <li>
                     By: <a href={item.author.ref}>{item.author.name}</a>
                   </li>
@@ -66,12 +69,15 @@ const YouTube: FC = () => {
                   <li>Views: {item.views}</li>
                   <li>UpLoaded: {item.uploadedAt}</li>
                 </ul>
-                <img
-                  className="thumbnail"
-                  src={item.bestThumbnail.url}
-                  alt="thumbnail"
-                />
-                <StarsIcon className="starContact" color="inherit" />
+                <ul className="right">
+                  <img
+                    className="thumbnail"
+                    src={item.bestThumbnail.url}
+                    alt="thumbnail"
+                  />
+                </ul>
+                <AddCircleIcon className="yellowYoutube" color="inherit" />
+                {/* <StarsIcon className="starYoutube" color="inherit" /> */}
               </li>
             ))}
           </ul>

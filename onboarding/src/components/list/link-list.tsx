@@ -1,5 +1,5 @@
 import "../../app.css";
-import useStore, {
+import useListStore, {
   ListItem as ListItemType,
   LinkState,
 } from "../../list-store";
@@ -7,7 +7,7 @@ import LinkInput from "./link-input";
 import LinkListItem from "./link-list-item";
 
 const LinkList = () => {
-  const links = useStore((state: LinkState) => state.links);
+  const links = useListStore((state: LinkState) => state.links);
 
   return (
     <div className="linklist">

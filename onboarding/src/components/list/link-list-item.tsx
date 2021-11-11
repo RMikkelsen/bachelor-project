@@ -1,7 +1,7 @@
 import "../../app.css";
 import StarsIcon from "@mui/icons-material/Stars";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import useStore, {
+import useListStore, {
   ListItem as ListItemType,
   LinkState,
 } from "../../list-store";
@@ -11,8 +11,10 @@ function LinkListItem({
   isFavorite,
   index,
 }: ListItemType & { index: number }) {
-  const toggleStarred = useStore((state: LinkState) => state.toggleFavorite);
-  const remove = useStore((state: LinkState) => state.removeLink);
+  const toggleStarred = useListStore(
+    (state: LinkState) => state.toggleFavorite
+  );
+  const remove = useListStore((state: LinkState) => state.removeLink);
   return (
     <div className="linkListItem">
       <p>

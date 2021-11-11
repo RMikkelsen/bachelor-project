@@ -1,11 +1,11 @@
 import "../../app.css";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import useStore from "../../list-store";
+import useListStore from "../../list-store";
 import React from "react";
 
 const LinkInput = () => {
   const [text, setText] = React.useState<string>("");
-  const add = useStore((state) => state.addLink);
+  const add = useListStore((state) => state.addLink);
 
   return (
     <>
