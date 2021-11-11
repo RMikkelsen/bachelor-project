@@ -22,11 +22,11 @@ export interface IYoutubeItem {
 
 const YouTube: FC = () => {
   const [query, setQuery] = useState<string>("");
-  const [youtubeResults, setYoutubeList] = useState<IYoutubeItem[]>([]);
+  const [youtubeResults, setYoutubeResults] = useState<IYoutubeItem[]>([]);
 
   const search = (e: any) => {
     e.preventDefault();
-    searchYouTube(query).then(setYoutubeList);
+    searchYouTube(query).then(setYoutubeResults);
   };
 
   return (
