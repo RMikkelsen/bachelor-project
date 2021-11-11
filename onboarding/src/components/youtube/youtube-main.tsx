@@ -1,10 +1,8 @@
-import React, { FC } from "react";
-import StarsIcon from "@mui/icons-material/Stars";
+import { FC } from "react";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import "../../app.css";
 import searchYouTube from "../../services/youtube.service";
 import { useState } from "react";
-import YouTubeSearch from "./youtube-searchbar";
 
 export interface IYoutubeItem {
   id: string;
