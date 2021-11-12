@@ -19,7 +19,7 @@ export let useListStore = create(
       links: [],
       addLink: (text: string) =>
         set((state: LinkState) => ({
-          links: [...state.links, { text: text }],
+          links: [...state.links, { text }],
         })),
       removeLink: (index: number) =>
         set((state: LinkState) => ({

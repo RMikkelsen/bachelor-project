@@ -11,10 +11,12 @@ function LinkListItem({
   isFavorite,
   index,
 }: ListItemType & { index: number }) {
+  const remove = useListStore((state: LinkState) => state.removeLink);
+
   const toggleStarred = useListStore(
     (state: LinkState) => state.toggleFavorite
   );
-  const remove = useListStore((state: LinkState) => state.removeLink);
+
   return (
     <div className="linkListItem">
       <p>

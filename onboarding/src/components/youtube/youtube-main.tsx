@@ -26,6 +26,7 @@ const YouTube: FC = () => {
 
   const search = (e: any) => {
     e.preventDefault();
+
     searchYouTube(query).then(setYoutubeResults);
   };
 
@@ -46,6 +47,7 @@ const YouTube: FC = () => {
           <AddCircleIcon className="yellow" color="inherit" />
         </button>
       </form>
+
       {youtubeResults &&
         (youtubeResults.length === 0 ? (
           <>
@@ -77,7 +79,6 @@ const YouTube: FC = () => {
                   />
                 </ul>
                 <AddCircleIcon className="yellowYoutube" color="inherit" />
-                {/* <StarsIcon className="starYoutube" color="inherit" /> */}
               </li>
             ))}
           </ul>

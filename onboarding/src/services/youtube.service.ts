@@ -11,6 +11,6 @@ export default async function searchYouTube(q: string | number | boolean) {
     }
   );
   const body = await response.json();
-  // console.log(body);
+  console.log(body);
   return body.items.filter((item: { type: string }) => item.type === "video");
 }
