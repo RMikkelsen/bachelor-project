@@ -5,6 +5,7 @@ import useListStore, {
   ListItem as ListItemType,
   LinkState,
 } from "../../list-store";
+import { Checkbox } from "@mui/material";
 
 function LinkListItem({
   text,
@@ -13,9 +14,7 @@ function LinkListItem({
 }: ListItemType & { index: number }) {
   const remove = useListStore((state: LinkState) => state.removeLink);
 
-  const toggleStarred = useListStore(
-    (state: LinkState) => state.toggleFavorite
-  );
+  let toggleStarred = useListStore((state: LinkState) => state.toggleFavorite);
 
   return (
     <div className="linkListItem">
@@ -27,12 +26,15 @@ function LinkListItem({
         />
         {text}
       </p>
-      <StarsIcon
-        className="starLink"
-        color="inherit"
+
+      <Checkbox
+        checked={isFavorite}
         onChange={() => {
           toggleStarred(index);
         }}
+        value={text}
+        icon={<StarsIcon className="starLink1" color="action" />}
+        checkedIcon={<StarsIcon className="starLink1" color="inherit" />}
       />
     </div>
   );

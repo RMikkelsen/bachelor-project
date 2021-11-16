@@ -2,8 +2,8 @@ import create from "zustand";
 import { persist } from "zustand/middleware";
 
 export type ListItem = {
-  text?: string;
-  isFavorite?: boolean;
+  text: string;
+  isFavorite: boolean;
 };
 
 export type LinkState = {
