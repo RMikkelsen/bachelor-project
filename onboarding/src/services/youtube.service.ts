@@ -8,13 +8,11 @@
 //     },
 //   };
 //   axios
-//     .get(
-//       "https://youtube-search-results.p.rapidapi.com/youtube-search/?q=" + q,
-//       config
-//     )
+//     .get("https://youtube-search-results.p.rapidapi.com/youtube-search/?q=" + q)
 //     .then((response) => {
 //       console.log(response.data);
 //     });
+
 // }
 
 export default async function searchYouTube(q: string | number | boolean) {
