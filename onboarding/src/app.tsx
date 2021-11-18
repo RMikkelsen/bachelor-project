@@ -6,7 +6,7 @@ import YouTube from "./components/youtube/youtube-main";
 function App() {
   return (
     <div className="App">
-      <h1>Learning Portal</h1>
+      <h1>Developer Onboarding Portal</h1>
       <span className="blocks">
         <Contacts />
 

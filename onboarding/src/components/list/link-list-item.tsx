@@ -18,7 +18,7 @@ function LinkListItem({
 
   return (
     <div className="linkListItem">
-      <p>
+      <p className="linkText">
         <HighlightOffIcon
           className="deleteIcon"
           color="error"

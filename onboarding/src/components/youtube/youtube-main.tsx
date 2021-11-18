@@ -37,6 +37,7 @@ const YouTube: FC = () => {
 
       <form onSubmit={search}>
         <input
+          placeholder="Search for tutorials"
           className="input"
           autoFocus
           value={query}

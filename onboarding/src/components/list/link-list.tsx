@@ -18,7 +18,7 @@ const LinkList = () => {
           text={text}
           isFavorite={isFavorite}
           index={index}
-          key={`todo-${text}-${index}`}
+          key={`item-${text}-${index}`}
         />
       ))}
     </div>

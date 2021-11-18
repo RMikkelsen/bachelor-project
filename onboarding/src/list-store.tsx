@@ -40,3 +40,6 @@ export let useListStore = create(
 );
 
 export default useListStore;
+
+//add in a sort alphabetically
+//add in a filter by isFavorite
