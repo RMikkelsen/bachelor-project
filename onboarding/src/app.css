@@ -10,8 +10,10 @@
 }
 body {
   background-image: url(https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?cs=srgb&dl=pexels-simon-berger-1323550.jpg&fm=jpg);
+  /* background-image: url(https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg); */
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 .App {
