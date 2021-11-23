@@ -21,8 +21,9 @@ body {
   color: white;
   background-color: rgba(9, 14, 51, 0.753);
   border-radius: 20px;
-  margin-top: 5px;
-  padding-top: 20px;
+  margin-top: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .blocks {

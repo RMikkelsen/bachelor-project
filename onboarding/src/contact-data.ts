@@ -1,4 +1,4 @@
-export const ContactData = [
+export const contactData = [
   {
     name: "Ruth Moritz",
     email: "RMM@impact.dk",

@@ -6,6 +6,7 @@ import useContactStore, {
   ContactState,
 } from "../../contact-store";
 import { Checkbox } from "@mui/material";
+import { contactData } from "../../contact-data";
 
 // type ContactProps = {
 //   name?: string;
@@ -27,35 +28,34 @@ function ContactListItem({
   );
 
   return (
-    <div className="contact">
-      <p>
-        <strong>Contact:</strong> {name}{" "}
-      </p>
-      <p>
-        {" "}
-        <strong>Email: </strong>
-        {slack}{" "}
-      </p>
-      <p>
-        <strong>Slack: </strong>
-        {email}{" "}
-      </p>
-      {/* <p>Email: {email}</p>
-      <p>Slack Name: {slack} </p> */}
+    <>
+      {contactData.map(({ name, email, slack }) => (
+        <div className="contact">
+          <p>
+            <strong>Contact:</strong> {name}
+          </p>
+          <p>
+            <strong>Email: </strong>
+            {slack}
+          </p>
+          <p>
+            <strong>Slack: </strong>
+            {email}
+          </p>
 
-      <Checkbox
-        className="contactToggle"
-        checked={isFavorite}
-        onChange={() => {
-          toggleStarred(index);
-        }}
-        value={name}
-        icon={<StarsIcon className="starLink" color="action" />}
-        checkedIcon={<StarsIcon className="starLink" color="inherit" />}
-      />
-      {/* 
-      <StarsIcon className="starContact" color="inherit" /> */}
-    </div>
+          <Checkbox
+            className="contactToggle"
+            checked={isFavorite}
+            onChange={() => {
+              toggleStarred(index);
+            }}
+            value={name}
+            icon={<StarsIcon className="starLink" color="action" />}
+            checkedIcon={<StarsIcon className="starLink" color="inherit" />}
+          />
+        </div>
+      ))}
+    </>
   );
 }
 export default ContactListItem;
