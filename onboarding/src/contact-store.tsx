@@ -10,8 +10,6 @@ export type ContactItem = {
 
 export type ContactState = {
   contacts: Array<ContactItem>;
-  // addLink: (text: string) => void;
-  // removeLink: (index: number) => void;
   toggleFavorite: (index: number) => void;
 };
 

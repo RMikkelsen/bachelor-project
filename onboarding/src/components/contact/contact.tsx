@@ -8,18 +8,7 @@ import useContactStore, {
 import { Checkbox } from "@mui/material";
 import { contactData } from "../../contact-data";
 
-// type ContactProps = {
-//   name?: string;
-//   email?: string;
-//   slack?: string;
-//   isFavorite?: boolean;
-// };
-
-// const Contact: FC<ContactProps> = ({ name, email, slack }) => {
 function ContactListItem({
-  name,
-  slack,
-  email,
   isFavorite,
   index,
 }: ContactItem & { index: number }) {
@@ -29,32 +18,16 @@ function ContactListItem({
 
   return (
     <>
-      {contactData.map(({ name, email, slack }) => (
-        <div className="contact">
-          <p>
-            <strong>Contact:</strong> {name}
-          </p>
-          <p>
-            <strong>Email: </strong>
-            {slack}
-          </p>
-          <p>
-            <strong>Slack: </strong>
-            {email}
-          </p>
-
-          <Checkbox
-            className="contactToggle"
-            checked={isFavorite}
-            onChange={() => {
-              toggleStarred(index);
-            }}
-            value={name}
-            icon={<StarsIcon className="starLink" color="action" />}
-            checkedIcon={<StarsIcon className="starLink" color="inherit" />}
-          />
-        </div>
-      ))}
+      <Checkbox
+        className="contactToggle"
+        checked={isFavorite}
+        onChange={() => {
+          toggleStarred(index);
+        }}
+        // value={name}
+        icon={<StarsIcon className="starLink" color="action" />}
+        checkedIcon={<StarsIcon className="starLink" color="inherit" />}
+      />
     </>
   );
 }
