@@ -1,5 +1,6 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
+import { contactData } from "./contact-data";
 
 export type ContactItem = {
   name: string;
@@ -17,7 +18,7 @@ export let useContactStore = create(
   persist(
     (set) => ({
       contacts: [],
-
+      // contacts: contactData,
       toggleFavorite: (index: number) =>
         set((state: ContactState) => ({
           contacts: state.contacts.map((contact, id) => {

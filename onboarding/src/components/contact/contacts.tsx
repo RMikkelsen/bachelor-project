@@ -12,13 +12,7 @@ const Contacts = () => {
   return (
     <div className="contacts">
       <h3>Who to Contact: </h3>
-      <ContactListItem
-        name={""}
-        email={""}
-        slack={""}
-        isFavorite={true}
-        index={0}
-      />
+
       {contactData.map(({ name, email, slack }) => (
         <div className="contact">
           <p>
@@ -32,6 +26,13 @@ const Contacts = () => {
             <strong>Slack: </strong>
             {slack}
           </p>
+          <ContactListItem
+            name={name}
+            email={email}
+            slack={slack}
+            isFavorite={true}
+            index={0}
+          />
         </div>
       ))}
 
@@ -43,7 +44,7 @@ const Contacts = () => {
             index={index}
             email={email}
             slack={slack}
-            // key={`item-${name}-${index}`}
+            key={`item-${name}-${index}`}
           />
         )
       )}

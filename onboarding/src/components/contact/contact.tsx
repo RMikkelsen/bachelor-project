@@ -1,4 +1,3 @@
-import { FC } from "react";
 import "../../app.css";
 import StarsIcon from "@mui/icons-material/Stars";
 import useContactStore, {
@@ -6,7 +5,6 @@ import useContactStore, {
   ContactState,
 } from "../../contact-store";
 import { Checkbox } from "@mui/material";
-import { contactData } from "../../contact-data";
 
 function ContactListItem({
   isFavorite,
