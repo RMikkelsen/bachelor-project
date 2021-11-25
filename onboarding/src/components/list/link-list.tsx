@@ -20,13 +20,12 @@ const LinkList = () => {
 
         <div className="filterButton ">
           <StarsIcon
-            className="starLink1"
+            className="starLink2"
             color="inherit"
             onClick={favorites}
           />
-          Filter By Favorites
+          <p>Toggle Favorites</p>
         </div>
-        <br />
 
         <LinkInput />
         {links.map(({ text, isFavorite }: ListItemType, index: number) => (

@@ -18,13 +18,16 @@ export let useListStore = create(
   persist(
     (set) => ({
       links: [],
-      addLink: (text: string) =>
+      addLink: (text: string) => {
+        if (!text) return;
         set((state: LinkState) => ({
           links: [...state.links, { text }],
-        })),
+        }));
+      },
+
       removeLink: (index: number) =>
         set((state: LinkState) => ({
-          links: state.links.filter((link, id) => id !== index),
+          links: state.links.filter((_link, id) => id !== index),
         })),
       toggleFavorite: (index: number) =>
         set((state: LinkState) => ({
@@ -37,11 +40,7 @@ export let useListStore = create(
         })),
       filterFavorite: () =>
         set((state: LinkState) => ({
-          links: state.links.filter((link, id) => {
-            if (link.isFavorite === true) {
-            }
-            return { ...link, isFavorite: link.isFavorite === true };
-          }),
+          links: state.links.filter((link) => !!link && link.isFavorite),
         })),
     }),
 
