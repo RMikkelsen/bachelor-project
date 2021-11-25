@@ -5,19 +5,27 @@ import useListStore, {
 } from "../../list-store";
 import LinkInput from "./link-input";
 import LinkListItem from "./link-list-item";
+import StarsIcon from "@mui/icons-material/Stars";
 
 const LinkList = () => {
   const links = useListStore((state: LinkState) => state.links);
 
   const favorites = useListStore((state: LinkState) => state.filterFavorite);
-  console.log(favorites);
+  console.log(links);
 
   return (
     <>
       <div className="linklist">
         <h3>Documentation / Links</h3>
-        <button onClick={(e) => favorites(1)}> Button</button>
 
+        <div className="filterButton ">
+          <StarsIcon
+            className="starLink1"
+            color="inherit"
+            onClick={favorites}
+          />
+          Filter By Favorites
+        </div>
         <br />
 
         <LinkInput />

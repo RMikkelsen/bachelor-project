@@ -11,7 +11,7 @@ export type LinkState = {
   addLink: (text: string) => void;
   removeLink: (index: number) => void;
   toggleFavorite: (index: number) => void;
-  filterFavorite: (index: number) => void;
+  filterFavorite: () => void;
 };
 
 export let useListStore = create(
@@ -35,11 +35,12 @@ export let useListStore = create(
             return { ...link, isFavorite: !link.isFavorite };
           }),
         })),
-      filterFavorite: (index: number) =>
+      filterFavorite: () =>
         set((state: LinkState) => ({
-          links: state.links.filter((link, index) => {
-            isFavorite(true);
-            return link.isFavorite;
+          links: state.links.filter((link, id) => {
+            if (link.isFavorite === true) {
+            }
+            return { ...link, isFavorite: link.isFavorite === true };
           }),
         })),
     }),
@@ -50,8 +51,5 @@ export let useListStore = create(
 
 export default useListStore;
 
-function isFavorite(isFavorite: any) {
-  throw new Error("Function not implemented.");
-}
 //add in a sort alphabetically
 //add in a filter by isFavorite
