@@ -7,13 +7,13 @@ function App() {
   return (
     <div className="App">
       <h1>Developer Onboarding Portal</h1>
-      <span className="blocks">
+      <div className="blocks">
         <Contacts />
 
         <YouTube />
 
         <LinkList />
-      </span>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,6 @@
-export const contactData = [
+import { ContactItem } from "./contact-store";
+
+export const contactData: ContactItem[] = [
   {
     name: "Ruth Moritz",
     email: "RMM@impact.dk",
@@ -25,7 +27,7 @@ export const contactData = [
 
   {
     name: "Simone Jørgensen",
-    email: "XYZ@impact.dk",
+    email: "SJS@impact.dk",
     slack: "@SJ",
   },
 ];

@@ -1,26 +1,18 @@
 import "../../app.css";
 import StarsIcon from "@mui/icons-material/Stars";
-import useContactStore, {
-  ContactItem,
-  ContactState,
-} from "../../contact-store";
+import useContactStore, { ContactItem } from "../../contact-store";
 import { Checkbox } from "@mui/material";
 
-function ContactListItem({
-  isFavorite,
-  index,
-}: ContactItem & { index: number }) {
-  let toggleStarred = useContactStore(
-    (state: ContactState) => state.toggleFavorite
-  );
+function ContactListItem({ email }: ContactItem) {
+  const { toggleFavorite, favoriteContacts } = useContactStore();
 
   return (
     <>
       <Checkbox
         className="contactToggle"
-        checked={isFavorite}
+        checked={(favoriteContacts as string[]).includes(email)}
         onChange={() => {
-          toggleStarred(index);
+          toggleFavorite(email);
         }}
         // value={name}
         icon={<StarsIcon className="starLink" color="action" />}

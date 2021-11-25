@@ -1,33 +1,40 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
-import { contactData } from "./contact-data";
 
 export type ContactItem = {
   name: string;
   email: string;
   slack: string;
-  isFavorite: boolean;
+  isFavorite?: boolean;
 };
 
 export type ContactState = {
-  contacts: Array<ContactItem>;
-  toggleFavorite: (index: number) => void;
+  favoriteContacts: string[];
+  toggleFavorite: (email: string) => void;
 };
 
 export let useContactStore = create(
   persist(
     (set) => ({
-      contacts: [],
-      // contacts: contactData,
-      toggleFavorite: (index: number) =>
-        set((state: ContactState) => ({
-          contacts: state.contacts.map((contact, id) => {
-            if (index !== id) {
-              return contact;
-            }
-            return { ...contact, isFavorite: !contact.isFavorite };
-          }),
-        })),
+      favoriteContacts: [],
+      toggleFavorite: (email: string) => {
+        set((state: ContactState) => {
+          const { favoriteContacts } = state;
+          const updatedFavorites = [...favoriteContacts];
+          const favoriteIndex = favoriteContacts.findIndex(
+            (f: string) => f === email
+          );
+          if (favoriteIndex > -1) {
+            updatedFavorites.splice(favoriteIndex, 1);
+          } else {
+            updatedFavorites.push(email);
+          }
+          return {
+            ...state,
+            favoriteContacts: updatedFavorites,
+          };
+        });
+      },
     }),
     { name: "contacts" }
   )
