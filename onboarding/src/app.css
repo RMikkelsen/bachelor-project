@@ -146,16 +146,20 @@ body {
 
 .youtubeBlock {
   background-color: rgba(130, 124, 212, 0.212);
-  width: 500px;
+  width: 250px;
   height: 150px;
   border-radius: 10px;
-  margin-left: 50px;
+  margin-left: 30px;
   margin-top: 20px;
   text-align: left;
   padding: 10px;
+  font-size: 15px;
 }
 .youtubeBlock:hover {
   transform: scale(1.02);
+}
+
+.youtubeBlockSaved {
 }
 button {
   background-color: rgba(130, 124, 212, 0.212);
@@ -181,20 +185,23 @@ a:hover {
 }
 
 .thumbnail {
-  width: 150px;
+  width: 100px;
   height: auto;
 }
 
 .left {
   margin-top: 10px;
+  font-size: 12px;
 }
 .right {
-  margin-left: 300px;
-  margin-top: -75px;
+  margin-left: 110px;
+  margin-top: -100px;
 }
 
 img {
   border-radius: 5px;
+  margin-top: 50px;
+  margin-left: 20px;
 }
 .filterButton {
   font-size: 12px;

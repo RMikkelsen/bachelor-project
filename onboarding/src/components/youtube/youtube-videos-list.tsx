@@ -1,8 +1,32 @@
 import "../../app.css";
+import useVideoStore, { Video, VideoState } from "../../youtube-store";
+
+import YouTubeVideoItem from "./youtube-video-item";
+
 const YouTubeVideos = () => {
+  let videos = useVideoStore((state: VideoState) => state.videos);
+
+  console.log(videos);
+
   return (
-    <div className="youtube">
-      <h3>YouTube Videos </h3>
+    <div>
+      {videos.map((youtubeVideo) => (
+        <>
+          <p>{youtubeVideo.title}</p>
+          <img
+            className="thumbnail"
+            alt="pic here"
+            src={youtubeVideo.bestThumbnail.url}
+          />
+          <YouTubeVideoItem video={""} index={0} />
+        </>
+        // <YouTubeVideoItem
+        //   video={video}
+        //   isFavorite={isFavorite}
+        //   index={index}
+        //   key={`item-${video}-${index}`}
+        // />
+      ))}
     </div>
   );
 };

@@ -3,6 +3,9 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import "../../app.css";
 import searchYouTube from "../../services/youtube.service";
 import { useState } from "react";
+import useVideoStore, { VideoState } from "../../youtube-store";
+import React from "react";
+import YouTubeVideos from "./youtube-videos-list";
 
 export interface IYoutubeItem {
   id: string;
@@ -23,6 +26,8 @@ export interface IYoutubeItem {
 const YouTube: FC = () => {
   const [query, setQuery] = useState<string>("");
   const [youtubeResults, setYoutubeResults] = useState<IYoutubeItem[]>([]);
+
+  const add = useVideoStore((state: VideoState) => state.addVideo);
 
   const search = (e: any) => {
     e.preventDefault();
@@ -79,11 +84,22 @@ const YouTube: FC = () => {
                     alt="thumbnail"
                   />
                 </ul>
-                <AddCircleIcon className="yellowYoutube" color="inherit" />
+                <AddCircleIcon
+                  className="yellowYoutube"
+                  color="inherit"
+                  onClick={() => {
+                    if (item) {
+                      add(item);
+                      console.log(item);
+                    }
+                  }}
+                />
               </li>
             ))}
           </ul>
         ))}
+
+      <YouTubeVideos />
     </div>
   );
 };
