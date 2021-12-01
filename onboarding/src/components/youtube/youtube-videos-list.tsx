@@ -20,6 +20,15 @@ const YouTubeVideos = () => {
             src={youtubeVideo.bestThumbnail.url}
           />
           <YouTubeVideoItem video={""} index={0} />
+
+          {/* 
+          {videos.map((video: Video, index: number) => (
+            <YouTubeVideoItem
+              video={video}
+              index={index}
+              key={`item-${video}-${index}`}
+            />
+          ))} */}
         </div>
       ))}
     </div>
