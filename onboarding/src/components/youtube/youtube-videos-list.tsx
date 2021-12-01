@@ -9,9 +9,10 @@ const YouTubeVideos = () => {
   console.log(videos);
 
   return (
-    <div>
+    <div className="savedYouTube">
+      <p>Saved Tutorials</p>
       {videos.map((youtubeVideo) => (
-        <>
+        <div className="youtubeBlockSaved">
           <p>{youtubeVideo.title}</p>
           <img
             className="thumbnail"
@@ -19,13 +20,7 @@ const YouTubeVideos = () => {
             src={youtubeVideo.bestThumbnail.url}
           />
           <YouTubeVideoItem video={""} index={0} />
-        </>
-        // <YouTubeVideoItem
-        //   video={video}
-        //   isFavorite={isFavorite}
-        //   index={index}
-        //   key={`item-${video}-${index}`}
-        // />
+        </div>
       ))}
     </div>
   );

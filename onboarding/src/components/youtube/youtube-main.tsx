@@ -6,6 +6,7 @@ import { useState } from "react";
 import useVideoStore, { VideoState } from "../../youtube-store";
 import React from "react";
 import YouTubeVideos from "./youtube-videos-list";
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 
 export interface IYoutubeItem {
   id: string;
@@ -53,53 +54,54 @@ const YouTube: FC = () => {
           <AddCircleIcon className="yellow" color="inherit" />
         </button>
       </form>
+      <div className="youtubeItems">
+        {youtubeResults &&
+          (youtubeResults.length === 0 ? (
+            <>
+              {" "}
+              <br />
+            </>
+          ) : (
+            <ul className="scrollable">
+              <p>YouTube Results</p>
+              {youtubeResults.map((item) => (
+                <li className="youtubeBlock" key={item.id}>
+                  <a href={item.url} rel="noopener noreferrer" target="_blank">
+                    {item.title}
+                  </a>
 
-      {youtubeResults &&
-        (youtubeResults.length === 0 ? (
-          <>
-            {" "}
-            <br />
-            <p>Please enter a search parameter and save video to your list.</p>
-          </>
-        ) : (
-          <ul className="items">
-            {youtubeResults.map((item) => (
-              <li className="youtubeBlock" key={item.id}>
-                <a href={item.url} rel="noopener noreferrer" target="_blank">
-                  {item.title}
-                </a>
-
-                <ul className="left">
-                  <li>
-                    By: <a href={item.author.ref}>{item.author.name}</a>
-                  </li>
-                  <li>Duration: {item.duration}</li>
-                  <li>Views: {item.views}</li>
-                  <li>UpLoaded: {item.uploadedAt}</li>
-                </ul>
-                <ul className="right">
-                  <img
-                    className="thumbnail"
-                    src={item.bestThumbnail.url}
-                    alt="thumbnail"
+                  <ul className="left">
+                    <li>
+                      By: <a href={item.author.ref}>{item.author.name}</a>
+                    </li>
+                    <li>Duration: {item.duration}</li>
+                    <li>Views: {item.views}</li>
+                    <li>UpLoaded: {item.uploadedAt}</li>
+                  </ul>
+                  <ul className="right">
+                    <img
+                      className="thumbnail"
+                      src={item.bestThumbnail.url}
+                      alt="thumbnail"
+                    />
+                  </ul>
+                  <BookmarkAddIcon
+                    className="orangeYoutube"
+                    color="inherit"
+                    onClick={() => {
+                      if (item) {
+                        add(item);
+                        console.log(item);
+                      }
+                    }}
                   />
-                </ul>
-                <AddCircleIcon
-                  className="yellowYoutube"
-                  color="inherit"
-                  onClick={() => {
-                    if (item) {
-                      add(item);
-                      console.log(item);
-                    }
-                  }}
-                />
-              </li>
-            ))}
-          </ul>
-        ))}
+                </li>
+              ))}
+            </ul>
+          ))}
 
-      <YouTubeVideos />
+        <YouTubeVideos />
+      </div>
     </div>
   );
 };
