@@ -10,7 +10,6 @@ const YouTubeVideos = () => {
 
   return (
     <div className="savedYouTube">
-      <p>Saved Tutorials</p>
       {videos.map((youtubeVideo) => (
         <div className="youtubeBlockSaved">
           <p>{youtubeVideo.title}</p>

@@ -191,6 +191,18 @@ body {
 .youtubeBlockSaved:hover {
   transform: scale(1.02);
 }
+
+.youtubeListHeaders {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.ytLeft {
+  width: 50%;
+}
+.ytRight {
+  width: 50%;
+}
 button {
   background-color: rgba(130, 124, 212, 0.212);
   border: none;
@@ -240,6 +252,7 @@ img {
 }
 form {
   height: 100px;
+  margin-bottom: -20px;
 }
 
 /* width */

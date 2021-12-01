@@ -54,6 +54,11 @@ const YouTube: FC = () => {
           <AddCircleIcon className="yellow" color="inherit" />
         </button>
       </form>
+      <div className="youtubeListHeaders">
+        <p className="ytLeft">YouTube Results</p>
+        <p className="ytRight">Saved Tutorials</p>
+      </div>
+
       <div className="youtubeItems">
         {youtubeResults &&
           (youtubeResults.length === 0 ? (
@@ -63,7 +68,6 @@ const YouTube: FC = () => {
             </>
           ) : (
             <ul className="scrollable">
-              <p>YouTube Results</p>
               {youtubeResults.map((item) => (
                 <li className="youtubeBlock" key={item.id}>
                   <a href={item.url} rel="noopener noreferrer" target="_blank">
