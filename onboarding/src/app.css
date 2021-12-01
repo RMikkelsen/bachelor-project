@@ -134,6 +134,10 @@ body {
   margin-right: 10px;
   margin-bottom: -5px;
 }
+.deleteIconYT {
+  margin-right: 10px;
+  margin-bottom: -5px;
+}
 
 .input {
   width: 250px;
@@ -262,13 +266,14 @@ form {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #9e9d9d71;
+  background: rgba(130, 124, 212, 0.212);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(190, 239, 252);
   height: 5px;
+  width: 10px;
 }
 
 /* Handle on hover */

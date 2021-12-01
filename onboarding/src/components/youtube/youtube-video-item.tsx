@@ -8,7 +8,7 @@ const YouTubeVideoItem = ({ video, index }: Video & { index: number }) => {
   return (
     <div>
       <HighlightOffIcon
-        className="deleteIcon"
+        className="deleteIconYT"
         color="error"
         onClick={() => remove(index)}
       />
