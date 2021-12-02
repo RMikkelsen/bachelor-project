@@ -64,6 +64,7 @@ const YouTube: FC = () => {
           (youtubeResults.length === 0 ? (
             <>
               {" "}
+              <p className="placeholderText"> please search for something</p>
               <br />
             </>
           ) : (

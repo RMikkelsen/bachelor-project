@@ -29,15 +29,6 @@ export const useVideoStore = create(
         set((state: VideoState) => ({
           videos: state.videos.filter((_video, id) => id !== index),
         })),
-      // toggleFavorite: (index: number) =>
-      //   set((state: VideoState) => ({
-      //     videos: state.videos.map((video, id) => {
-      //       if (index !== id) {
-      //         return video;
-      //       }
-      //       return { ...video, isFavorite: !video.isFavorite };
-      //     }),
-      //   })),
     }),
     { name: "videos" }
   )
