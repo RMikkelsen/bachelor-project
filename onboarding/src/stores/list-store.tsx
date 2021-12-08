@@ -11,7 +11,7 @@ export type LinkState = {
   addLink: (text: string) => void;
   removeLink: (index: number) => void;
   toggleFavorite: (index: number) => void;
-  filterFavorite: () => void;
+  // filterFavorite: (onlyFavorites?: boolean) => void;
 };
 
 export let useListStore = create(
@@ -38,10 +38,12 @@ export let useListStore = create(
             return { ...link, isFavorite: !link.isFavorite };
           }),
         })),
-      filterFavorite: () =>
-        set((state: LinkState) => ({
-          links: state.links.filter((link) => !!link && link.isFavorite),
-        })),
+      //   filterFavorite: (onlyFavorites: boolean = false) =>
+      //     set((state: LinkState) => ({
+      //       links: onlyFavorites
+      //         ? state.links.filter((link) => link && link.isFavorite)
+      //         : state.links,
+      //     })),
     }),
 
     { name: "links" }
@@ -52,3 +54,4 @@ export default useListStore;
 
 //add in a sort alphabetically
 //add in a filter by isFavorite
+// links: state.links.filter((link) => link && link.isFavorite),

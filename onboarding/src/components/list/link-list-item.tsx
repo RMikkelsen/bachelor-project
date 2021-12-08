@@ -4,7 +4,7 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import useListStore, {
   ListItem as ListItemType,
   LinkState,
-} from "../../list-store";
+} from "../../stores/list-store";
 import { Checkbox } from "@mui/material";
 
 function LinkListItem({

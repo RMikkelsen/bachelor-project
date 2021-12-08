@@ -43,8 +43,6 @@ body {
   padding-top: 20px;
 }
 .youtube {
-  /* display: flex;
-  flex-direction: row; */
   background-color: rgba(22, 22, 41, 0.5);
   width: 600px;
   height: 800px;
@@ -138,6 +136,11 @@ body {
   margin-right: 10px;
   margin-bottom: -5px;
 }
+.resetInput {
+  color: rgb(255, 170, 0);
+  margin-left: 5px;
+  margin-bottom: -8px;
+}
 
 .input {
   width: 250px;
@@ -217,14 +220,20 @@ body {
   margin-right: 50px;
   color: rgba(130, 124, 212, 0.589);
 }
+
 button {
-  background-color: rgba(130, 124, 212, 0.212);
+  background-color: transparent;
   border: none;
 }
 
 ul {
   list-style: none;
 }
+/* a {
+  width: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+} */
 
 a:link {
   color: white;
@@ -267,6 +276,14 @@ img {
 form {
   height: 100px;
   margin-bottom: -20px;
+}
+.savedLink {
+  width: 100px;
+  overflow: hidden;
+}
+a {
+  width: 100px;
+  overflow: hidden;
 }
 
 /* width */

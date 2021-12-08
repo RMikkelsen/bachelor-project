@@ -1,6 +1,6 @@
 import "../../app.css";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import useListStore from "../../list-store";
+import useListStore from "../../stores/list-store";
 import React from "react";
 
 const LinkInput = () => {

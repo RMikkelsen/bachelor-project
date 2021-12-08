@@ -1,6 +1,6 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
-import { IYoutubeItem } from "./components/youtube/youtube-main";
+import { IYoutubeItem } from "../components/youtube/youtube-main";
 
 export type Video = {
   video: string;

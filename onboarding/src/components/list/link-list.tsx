@@ -2,16 +2,23 @@ import "../../app.css";
 import useListStore, {
   ListItem as ListItemType,
   LinkState,
-} from "../../list-store";
+} from "../../stores/list-store";
 import LinkInput from "./link-input";
 import LinkListItem from "./link-list-item";
 import StarsIcon from "@mui/icons-material/Stars";
+import { useState } from "react";
 
 const LinkList = () => {
   const links = useListStore((state: LinkState) => state.links);
 
-  const favorites = useListStore((state: LinkState) => state.filterFavorite);
-  console.log(links);
+  // const filterFavorites = useListStore(
+  //   (state: LinkState) => state.filterFavorite
+  // );
+
+  const [showFavorites, setShowFavorites] = useState(false);
+  // useEffect(() => {
+  //   filterFavorites(showFavorites);
+  // }, [filterFavorites, showFavorites]);
 
   return (
     <>
@@ -21,21 +28,23 @@ const LinkList = () => {
         <div className="filterButton ">
           <StarsIcon
             className="starLink2"
-            color="inherit"
-            onClick={favorites}
+            color={showFavorites ? "inherit" : "disabled"}
+            onClick={() => setShowFavorites(!showFavorites)}
           />
           <p>Toggle Favorites</p>
         </div>
 
         <LinkInput />
-        {links.map(({ text, isFavorite }: ListItemType, index: number) => (
-          <LinkListItem
-            text={text}
-            isFavorite={isFavorite}
-            index={index}
-            key={`item-${text}-${index}`}
-          />
-        ))}
+        {links
+          .filter((link) => (showFavorites ? link.isFavorite : true))
+          .map(({ text, isFavorite }: ListItemType, index: number) => (
+            <LinkListItem
+              text={text}
+              isFavorite={isFavorite}
+              index={index}
+              key={`item-${text}-${index}`}
+            />
+          ))}
       </div>
     </>
   );

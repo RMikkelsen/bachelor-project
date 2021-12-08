@@ -1,6 +1,6 @@
 import "../../app.css";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import useVideoStore, { Video, VideoState } from "../../youtube-store";
+import useVideoStore, { Video, VideoState } from "../../stores/youtube-store";
 
 const YouTubeVideoItem = ({ video, index }: Video & { index: number }) => {
   const remove = useVideoStore((state: VideoState) => state.removeVideo);

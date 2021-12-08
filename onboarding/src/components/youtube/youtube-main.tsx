@@ -3,10 +3,11 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import "../../app.css";
 import searchYouTube from "../../services/youtube.service";
 import { useState } from "react";
-import useVideoStore, { VideoState } from "../../youtube-store";
+import useVideoStore, { VideoState } from "../../stores/youtube-store";
 import React from "react";
 import YouTubeVideos from "./youtube-videos-list";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+import BackspaceOutlinedIcon from "@mui/icons-material/BackspaceOutlined";
 
 export interface IYoutubeItem {
   id: string;
@@ -27,6 +28,10 @@ export interface IYoutubeItem {
 const YouTube: FC = () => {
   const [query, setQuery] = useState<string>("");
   const [youtubeResults, setYoutubeResults] = useState<IYoutubeItem[]>([]);
+
+  function resetInput() {
+    setQuery("");
+  }
 
   const add = useVideoStore((state: VideoState) => state.addVideo);
 
@@ -50,8 +55,10 @@ const YouTube: FC = () => {
           onChange={(e) => setQuery(e.target.value)}
         />
         <button type="submit">
-          {" "}
           <AddCircleIcon className="yellow" color="inherit" />
+        </button>
+        <button onClick={resetInput} color="medium">
+          <BackspaceOutlinedIcon className="resetInput" color="inherit" />
         </button>
       </form>
       <div className="youtubeListHeaders">

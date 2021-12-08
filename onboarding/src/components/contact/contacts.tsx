@@ -1,6 +1,6 @@
 import "../../app.css";
 import { contactData } from "../../contact-data";
-import { ContactItem } from "../../contact-store";
+import { ContactItem } from "../../stores/contact-store";
 import ContactListItem from "./contact";
 
 const Contacts = () => {

@@ -1,6 +1,6 @@
 import "../../app.css";
 import StarsIcon from "@mui/icons-material/Stars";
-import useContactStore, { ContactItem } from "../../contact-store";
+import useContactStore, { ContactItem } from "../../stores/contact-store";
 import { Checkbox } from "@mui/material";
 
 function ContactListItem({ email }: ContactItem) {

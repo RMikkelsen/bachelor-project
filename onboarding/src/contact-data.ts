@@ -1,4 +1,4 @@
-import { ContactItem } from "./contact-store";
+import { ContactItem } from "./stores/contact-store";
 
 export const contactData: ContactItem[] = [
   {

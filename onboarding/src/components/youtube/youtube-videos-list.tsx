@@ -1,5 +1,5 @@
 import "../../app.css";
-import useVideoStore, { Video, VideoState } from "../../youtube-store";
+import useVideoStore, { Video, VideoState } from "../../stores/youtube-store";
 
 import YouTubeVideoItem from "./youtube-video-item";
 
@@ -10,22 +10,16 @@ const YouTubeVideos = () => {
 
   return (
     <div className="savedYouTube">
-      {videos.map((youtubeVideo, video, index) => (
+      {videos.map((youtubeVideo, index) => (
         <>
-          <YouTubeVideoItem
-            video={""}
-            index={0}
-            //video={video}
-            //index={index}
-            //key={`item-${video}-${index}`}
-          />
           <div className="youtubeBlockSaved">
             <a
+              // style={{ width: "50px", overflow: "hidden" }}
               href={youtubeVideo.url}
               rel="noopener noreferrer"
               target="_blank"
             >
-              {youtubeVideo.title}
+              <YouTubeVideoItem video={youtubeVideo.title} index={index} />
             </a>
             <ul className="left">
               <li>
@@ -43,13 +37,6 @@ const YouTubeVideos = () => {
                 alt="thumbnail"
               />
             </ul>
-            <YouTubeVideoItem
-              video={""}
-              index={0}
-              //video={video}
-              //index={index}
-              //key={`item-${video}-${index}`}
-            />
           </div>
         </>
       ))}
