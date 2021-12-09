@@ -1,5 +1,5 @@
 import "../../app.css";
-import useVideoStore, { Video, VideoState } from "../../stores/youtube-store";
+import useVideoStore, { VideoState } from "../../stores/youtube-store";
 
 import YouTubeVideoItem from "./youtube-video-item";
 
@@ -14,12 +14,11 @@ const YouTubeVideos = () => {
         <>
           <div className="youtubeBlockSaved">
             <a
-              // style={{ width: "50px", overflow: "hidden" }}
               href={youtubeVideo.url}
               rel="noopener noreferrer"
               target="_blank"
             >
-              <YouTubeVideoItem video={youtubeVideo.title} index={index} />
+              {youtubeVideo.title}
             </a>
             <ul className="left">
               <li>
@@ -37,6 +36,7 @@ const YouTubeVideos = () => {
                 alt="thumbnail"
               />
             </ul>
+            <YouTubeVideoItem video={""} index={index} />
           </div>
         </>
       ))}
