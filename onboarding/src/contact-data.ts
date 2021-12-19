@@ -8,26 +8,26 @@ export const contactData: ContactItem[] = [
   },
 
   {
-    name: "Frederik Stentoft",
-    email: "123@impact.dk",
-    slack: "@FS",
+    name: "Rick Sanchez",
+    email: "123@email.dk",
+    slack: "@RS",
   },
 
   {
-    name: "Steven Sønderskov",
-    email: "ABC@impact.dk",
-    slack: "@SS",
+    name: "Inigo Montoya",
+    email: "ABC@email.dk",
+    slack: "@IM",
   },
 
   {
-    name: "Louise Nordenhof",
-    email: "XYZ@impact.dk",
-    slack: "@LN",
+    name: "Rocky Balboa",
+    email: "XYZ@email.dk",
+    slack: "@RB",
   },
 
   {
-    name: "Simone Jørgensen",
-    email: "SJS@impact.dk",
-    slack: "@SJ",
+    name: "Kathryn Janeway",
+    email: "789@email.dk",
+    slack: "@KJ",
   },
 ];

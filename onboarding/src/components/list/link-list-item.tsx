@@ -1,10 +1,10 @@
 import "../../app.css";
-import StarsIcon from "@mui/icons-material/Stars";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import useListStore, {
   ListItem as ListItemType,
   LinkState,
 } from "../../stores/list-store";
+import StarsIcon from "@mui/icons-material/Stars";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { Checkbox } from "@mui/material";
 
 function LinkListItem({
@@ -40,3 +40,4 @@ function LinkListItem({
   );
 }
 export default LinkListItem;
+//inspired code from Ankur Kedia https://codesandbox.io/s/todo-zustand-react-jbwi0?fontsize=14&hidenavigation=1&theme=dark&file=/src/App.tsx

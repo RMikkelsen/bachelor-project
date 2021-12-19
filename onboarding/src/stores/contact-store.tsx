@@ -41,6 +41,3 @@ export let useContactStore = create(
 );
 
 export default useContactStore;
-
-//add in a sort alphabetically
-//add in a filter by isFavorite

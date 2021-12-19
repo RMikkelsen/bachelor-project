@@ -10,15 +10,7 @@ import { useState } from "react";
 
 const LinkList = () => {
   const links = useListStore((state: LinkState) => state.links);
-
-  // const filterFavorites = useListStore(
-  //   (state: LinkState) => state.filterFavorite
-  // );
-
   const [showFavorites, setShowFavorites] = useState(false);
-  // useEffect(() => {
-  //   filterFavorites(showFavorites);
-  // }, [filterFavorites, showFavorites]);
 
   return (
     <>
@@ -50,3 +42,4 @@ const LinkList = () => {
   );
 };
 export default LinkList;
+//inspired code from Ankur Kedia https://codesandbox.io/s/todo-zustand-react-jbwi0?fontsize=14&hidenavigation=1&theme=dark&file=/src/App.tsx

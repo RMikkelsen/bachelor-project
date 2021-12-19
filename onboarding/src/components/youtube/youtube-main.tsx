@@ -4,7 +4,6 @@ import "../../app.css";
 import searchYouTube from "../../services/youtube.service";
 import { useState } from "react";
 import useVideoStore, { VideoState } from "../../stores/youtube-store";
-import React from "react";
 import YouTubeVideos from "./youtube-videos-list";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import BackspaceOutlinedIcon from "@mui/icons-material/BackspaceOutlined";
@@ -48,7 +47,7 @@ const YouTube: FC = () => {
 
       <form onSubmit={search}>
         <input
-          placeholder="Search for tutorials"
+          placeholder="Try searching for Javascript"
           className="input"
           autoFocus
           value={query}
@@ -119,3 +118,4 @@ const YouTube: FC = () => {
 };
 
 export default YouTube;
+// inspired from Steven's Rapid API Tutorial youtube tutorial: https://rapidapi.com/blog/react-youtube-api/

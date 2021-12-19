@@ -11,7 +11,6 @@ export type VideoState = {
   videos: Array<IYoutubeItem>;
   addVideo: (video: IYoutubeItem) => void;
   removeVideo: (index: number) => void;
-  // toggleFavorite: (index: number) => void;
 };
 
 export const useVideoStore = create(

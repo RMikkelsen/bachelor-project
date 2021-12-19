@@ -11,7 +11,6 @@ export type LinkState = {
   addLink: (text: string) => void;
   removeLink: (index: number) => void;
   toggleFavorite: (index: number) => void;
-  // filterFavorite: (onlyFavorites?: boolean) => void;
 };
 
 export let useListStore = create(
@@ -38,12 +37,6 @@ export let useListStore = create(
             return { ...link, isFavorite: !link.isFavorite };
           }),
         })),
-      //   filterFavorite: (onlyFavorites: boolean = false) =>
-      //     set((state: LinkState) => ({
-      //       links: onlyFavorites
-      //         ? state.links.filter((link) => link && link.isFavorite)
-      //         : state.links,
-      //     })),
     }),
 
     { name: "links" }
@@ -52,6 +45,4 @@ export let useListStore = create(
 
 export default useListStore;
 
-//add in a sort alphabetically
-//add in a filter by isFavorite
-// links: state.links.filter((link) => link && link.isFavorite),
+//inspired code from Ankur Kedia https://codesandbox.io/s/todo-zustand-react-jbwi0?fontsize=14&hidenavigation=1&theme=dark&file=/src/App.tsx
